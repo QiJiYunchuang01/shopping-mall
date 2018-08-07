@@ -119,10 +119,22 @@
     where user_id = #{userId,jdbcType=INTEGER}
   </select>
 
+
+  <select id="selectUserByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from yunshang_user
+    where user_name = #{username}
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from yunshang_user
     where user_id = #{userId,jdbcType=INTEGER}
   </delete>
+
+
+
 
 
 

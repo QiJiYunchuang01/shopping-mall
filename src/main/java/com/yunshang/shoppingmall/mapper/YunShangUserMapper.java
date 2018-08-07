@@ -18,5 +18,11 @@ public interface YunShangUserMapper {
 
     int updateByPrimaryKey(YunShangUser record);
 
+    /**
+     * 根据用户名查询用户
+     * @param username
+     * @return
+     */
+    YunShangUser selectUserByUserName(String username);
 
 }

@@ -53,4 +53,14 @@ public class YunShangUserServiceImpl implements YunShangUserService {
         return 0;
     }
 
+    /**
+     * 根据用户名查询用户
+     * @param username
+     * @return
+     */
+    @Override
+    public YunShangUser selectUserByUserName(String username) {
+        return yunShangUserMapper.selectUserByUserName(username);
+    }
+
 }
