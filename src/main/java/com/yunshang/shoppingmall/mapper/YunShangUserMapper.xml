@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunshang.shoppingmall.mapper.YunShangUserMapper">
+  <resultMap id="BaseResultMap" type="com.yunshang.shoppingmall.entity.YunShangUser">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="pay_pwd" jdbcType="VARCHAR" property="payPwd" />
+    <result column="user_identity" jdbcType="VARCHAR" property="userIdentity" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, user_name, pwd, phone, pay_pwd, user_identity
+  </sql>
+
+  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">-->
+    <!--delete from yunshang_user-->
+    <!--where user_id = #{userId,jdbcType=INTEGER}-->
+  <!--</delete>-->
+
+
+  <insert id="insert" parameterType="com.yunshang.shoppingmall.entity.YunShangUser">
+    insert into yunshang_user (user_id, user_name, pwd,
+      phone, pay_pwd, user_identity
+      )
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR},
+      #{phone,jdbcType=VARCHAR}, #{payPwd,jdbcType=VARCHAR}, #{userIdentity,jdbcType=VARCHAR}
+      )
+  </insert>
+
+
+
+  <insert id="insertSelective" parameterType="com.yunshang.shoppingmall.entity.YunShangUser">
+    insert into yunshang_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="pwd != null">
+        pwd,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="payPwd != null">
+        pay_pwd,
+      </if>
+      <if test="userIdentity != null">
+        user_identity,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="payPwd != null">
+        #{payPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userIdentity != null">
+        #{userIdentity,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+
+
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.yunshang.shoppingmall.entity.YunShangUser">
+    update yunshang_user
+    <set>
+      <if test="userName != null">
+        user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="payPwd != null">
+        pay_pwd = #{payPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userIdentity != null">
+        user_identity = #{userIdentity,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+
+
+  <update id="updateByPrimaryKey" parameterType="com.yunshang.shoppingmall.entity.YunShangUser">
+    update yunshang_user
+    set user_name = #{userName,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      pay_pwd = #{payPwd,jdbcType=VARCHAR},
+      user_identity = #{userIdentity,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from yunshang_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yunshang_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+
+
+
+  <!--<insert id="insert" parameterType="com.yunshang.shoppingmall.entity.YunShangUser">-->
+    <!--insert into yunshang_user (user_id, user_name, pwd,-->
+      <!--phone, pay_pwd, user_identity-->
+      <!--)-->
+    <!--values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR},-->
+      <!--#{phone,jdbcType=VARCHAR}, #{payPwd,jdbcType=VARCHAR}, #{userIdentity,jdbcType=VARCHAR}-->
+      <!--)-->
+  <!--</insert>-->
+
+
+
+  <!--<insert id="insertSelective" parameterType="com.yunshang.shoppingmall.entity.YunShangUser">-->
+    <!--insert into yunshang_user-->
+    <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+      <!--<if test="userId != null">-->
+        <!--user_id,-->
+      <!--</if>-->
+      <!--<if test="userName != null">-->
+        <!--user_name,-->
+      <!--</if>-->
+      <!--<if test="pwd != null">-->
+        <!--pwd,-->
+      <!--</if>-->
+      <!--<if test="phone != null">-->
+        <!--phone,-->
+      <!--</if>-->
+      <!--<if test="payPwd != null">-->
+        <!--pay_pwd,-->
+      <!--</if>-->
+      <!--<if test="userIdentity != null">-->
+        <!--user_identity,-->
+      <!--</if>-->
+    <!--</trim>-->
+    <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+      <!--<if test="userId != null">-->
+        <!--#{userId,jdbcType=INTEGER},-->
+      <!--</if>-->
+      <!--<if test="userName != null">-->
+        <!--#{userName,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="pwd != null">-->
+        <!--#{pwd,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="phone != null">-->
+        <!--#{phone,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="payPwd != null">-->
+        <!--#{payPwd,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="userIdentity != null">-->
+        <!--#{userIdentity,jdbcType=VARCHAR},-->
+      <!--</if>-->
+    <!--</trim>-->
+  <!--</insert>-->
+
+
+
+  <!--<update id="updateByPrimaryKeySelective" parameterType="com.yunshang.shoppingmall.entity.YunShangUser">-->
+    <!--update yunshang_user-->
+    <!--<set>-->
+      <!--<if test="userName != null">-->
+        <!--user_name = #{userName,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="pwd != null">-->
+        <!--pwd = #{pwd,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="phone != null">-->
+        <!--phone = #{phone,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="payPwd != null">-->
+        <!--pay_pwd = #{payPwd,jdbcType=VARCHAR},-->
+      <!--</if>-->
+      <!--<if test="userIdentity != null">-->
+        <!--user_identity = #{userIdentity,jdbcType=VARCHAR},-->
+      <!--</if>-->
+    <!--</set>-->
+    <!--where user_id = #{userId,jdbcType=INTEGER}-->
+  <!--</update>-->
+
+
+
+  <!--<update id="updateByPrimaryKey" parameterType="com.yunshang.shoppingmall.entity.YunShangUser">-->
+    <!--update yunshang_user-->
+    <!--set user_name = #{userName,jdbcType=VARCHAR},-->
+      <!--pwd = #{pwd,jdbcType=VARCHAR},-->
+      <!--phone = #{phone,jdbcType=VARCHAR},-->
+      <!--pay_pwd = #{payPwd,jdbcType=VARCHAR},-->
+      <!--user_identity = #{userIdentity,jdbcType=VARCHAR}-->
+    <!--where user_id = #{userId,jdbcType=INTEGER}-->
+  <!--</update>-->
+
+
+
+</mapper>
