@@ -28,10 +28,10 @@
   </delete>
 
   <insert id="insert" parameterType="com.yunshang.shoppingmall.entity.Product">
-    insert into product_table (product_id, product_name, rep_id, 
+    insert into product_table (product_id, product_name, rep_id,
       product_desc, product_unit, supplier
       )
-    values (#{productId,jdbcType=INTEGER}, #{productName,jdbcType=VARCHAR}, #{repId,jdbcType=INTEGER}, 
+    values (#{productId,jdbcType=INTEGER}, #{productName,jdbcType=VARCHAR}, #{repId,jdbcType=INTEGER},
       #{productDesc,jdbcType=VARCHAR}, #{productUnit,jdbcType=VARCHAR}, #{supplier,jdbcType=VARCHAR}
       )
   </insert>
@@ -112,7 +112,7 @@
     where product_id = #{productId,jdbcType=INTEGER}
   </update>
 
-  <select id="selectProductByProductName" parameterType="java.lang.String " resultMap="BaseResultMap">
+  <select id="selectProductByProductName" parameterType="com.yunshang.shoppingmall.entity.Product" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from product_table
