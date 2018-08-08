@@ -1,6 +1,8 @@
 package com.yunshang.shoppingmall.entity;
 
-public class YunShangUser {
+import java.io.Serializable;
+
+public class YunShangUser implements Serializable {
     private Integer userId;
 
     private String userName;
