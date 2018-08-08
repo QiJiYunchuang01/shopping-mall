@@ -3,6 +3,8 @@ package com.yunshang.shoppingmall.mapper;
 import com.yunshang.shoppingmall.entity.Product;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * 产品类mapper
  */
@@ -22,7 +24,21 @@ public interface ProductMapper {
 
     Product selectByPrimaryKey(Integer productId);
 
-    int updateByPrimaryKeySelective(Product record);
+    /**
+     * 更新产品
+     * @param product
+     * @return
+     */
+    int updateByPrimaryKeySelective(Product product);
 
     int updateByPrimaryKey(Product record);
+
+    /**
+     * 根据产品名称查询产品
+     * @param productName
+     * @return
+     */
+    List<Product> selectProductByProductName(String productName);
+
+
 }

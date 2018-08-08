@@ -6,6 +6,8 @@ import com.yunshang.shoppingmall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("productService")
 public class ProductServiceImpl implements ProductService {
 
@@ -38,13 +40,23 @@ public class ProductServiceImpl implements ProductService {
         return null;
     }
 
+    /**
+     * 更新产品
+     * @param record
+     * @return
+     */
     @Override
-    public int updateByPrimaryKeySelective(Product record) {
-        return 0;
+    public int updateByPrimaryKeySelective(Product product) {
+        return productMapper.updateByPrimaryKeySelective(product);
     }
 
     @Override
     public int updateByPrimaryKey(Product record) {
         return 0;
+    }
+
+    @Override
+    public List<Product> selectProductByProductName(String productName) {
+        return productMapper.selectProductByProductName(productName);
     }
 }

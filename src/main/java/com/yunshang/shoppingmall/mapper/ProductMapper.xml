@@ -79,6 +79,7 @@
       </if>
     </trim>
   </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.yunshang.shoppingmall.entity.Product">
     update product_table
     <set>
@@ -110,5 +111,17 @@
       supplier = #{supplier,jdbcType=VARCHAR}
     where product_id = #{productId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectProductByProductName" parameterType="java.lang.String " resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from product_table
+    <where>
+      <if test="productName!=''">
+        product_name like '%${productName}%'
+      </if>
+    </where>
+      order by product_id
+  </select>
 
 </mapper>
