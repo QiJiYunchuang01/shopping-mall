@@ -2,6 +2,7 @@ package com.yunshang.shoppingmall.controller;
 
 import com.yunshang.shoppingmall.entity.YunShangUser;
 import com.yunshang.shoppingmall.service.YunShangUserService;
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -47,5 +48,16 @@ public class YunShangUserController {
 
 
    }
+
+
+    /**
+     * 进入登录页面
+     */
+    @RequestMapping("/getLogin")
+    public String getLogin(){
+        System.out.println("开始登录-----");
+        return "login";
+    }
+
 
 }
