@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface AdminMapper {
+
     int deleteByPrimaryKey(Integer adminId);
 
     int insert(Admin record);

@@ -7,20 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <title>云商后台系统首页</title>
+    <title>云创社区后台首页</title>
 
-    <meta name="keywords" content="云商后台系统首页">
-    <meta name="description" content="云商后台系统首页">
+    <meta name="keywords" content="云创社区后台系统首页">
+    <meta name="description" content="云创社区后台系统首页">
 
     <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
 
-    <link rel="shortcut icon" href="../public/favicon.ico">
-    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
-    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link rel="shortcut icon" th:href="@{favicon.ico}">
+    <link th:href="@{css/bootstrap.min14ed.css}" rel="stylesheet">
+    <link th:href="@{css/font-awesome.min93e3.css}" rel="stylesheet">
+    <link th:href="@{css/animate.min.css}" rel="stylesheet">
+    <link th:href="@{css/style.min862f.css}" rel="stylesheet">
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
@@ -37,7 +37,7 @@
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
                                <span class="block m-t-xs"><strong class="font-bold">Beaut-zihan</strong></span>
-                                <span class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
+                                <span class="text-muted text-xs block">管理员<b class="caret"></b></span>
                                 </span>
                             </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -54,7 +54,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="logo-element">H+
+                        <div class="logo-element">
                         </div>
                     </li>
                     <li>
@@ -65,7 +65,7 @@
                         </a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a class="J_menuItem" href="../public/index_v1.html" data-index="0">主页示例一</a>
+                                <a class="J_menuItem" href="../public/index_v1.html" data-index="0">商品分类</a>
                             </li>
                             <li>
                                 <a class="J_menuItem" href="../public/index_v2.html">主页示例二</a>
@@ -916,16 +916,13 @@
             </a>
         </div>
     </div>
-    <script src="js/jquery.min.js?v=2.1.4"></script>
-    <script src="js/bootstrap.min.js?v=3.3.6"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="js/plugins/layer/layer.min.js"></script>
-    <script src="js/hplus.min.js?v=4.1.0"></script>
-    <script type="text/javascript" src="js/contabs.min.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+    <script th:src="@{js/jquery.min.js}"></script>
+    <script th:src="@{js/bootstrap.min.js}"></script>
+    <script th:src="@{js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+    <script th:src="@{js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+    <script th:src="@{js/plugins/layer/layer.min.js}"></script>
+    <script th:src="@{js/hplus.min.js}"></script>
+    <script type="text/javascript" th:src="@{js/contabs.min.js}"></script>
+    <script th:src="@{js/plugins/pace/pace.min.js}"></script>
 </body>
-
-
-<!-- Mirrored from www.zi-han.net/theme/hplus/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:17:11 GMT -->
 </html>

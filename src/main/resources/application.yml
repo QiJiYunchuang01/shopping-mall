@@ -1,5 +1,5 @@
 server:
-  port: 8091
+  port: 8092
 
 spring:
   datasource:
@@ -7,7 +7,7 @@ spring:
     url: jdbc:mysql://192.168.0.90:3306/yunshangdb
     username: root
     password: 12345678
-    type: com.alibaba.druid.pool.DruidDataSource   #com.alibaba.druid.pool.DruidDataSource
+  type: com.alibaba.druid.pool.DruidDataSource   #com.alibaba.druid.pool.DruidDataSource
 #    max-wait: 60000
 #    max-active: 20
 #    minimum-idle: 3
