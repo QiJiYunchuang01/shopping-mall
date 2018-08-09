@@ -1,14 +1,14 @@
 package com.yunshang.shoppingmall.controller;
 
 import com.yunshang.shoppingmall.entity.Admin;
-import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 /**
  * 后台管理员Admin
