@@ -8,13 +8,16 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface AdminMapper {
-
+    //根据ID删除
     int deleteByPrimaryKey(Integer adminId);
 
-    int insert(Admin record);
 
-    int insertSelective(Admin record);
+    int insert(Admin admin);
 
+    //增加
+    int insertSelective(Admin admin);
+
+    //
     Admin selectByPrimaryKey(Integer adminId);
 
     int updateByPrimaryKeySelective(Admin record);

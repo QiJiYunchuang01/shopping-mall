@@ -11,7 +11,8 @@ public interface AdminService {
 
     int insert(Admin record);
 
-    int insertSelective(Admin record);
+    //增加管理员
+    int insertSelective(Admin admin);
 
     Admin selectByPrimaryKey(Integer adminId);
 

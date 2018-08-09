@@ -15,6 +15,7 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     AdminMapper adminMapper;
 
+
     @Override
     public int deleteByPrimaryKey(Integer adminId) {
         return 0;
@@ -25,9 +26,10 @@ public class AdminServiceImpl implements AdminService {
         return 0;
     }
 
+    //增加管理员
     @Override
-    public int insertSelective(Admin record) {
-        return 0;
+    public int insertSelective(Admin admin) {
+        return adminMapper.insertSelective(admin);
     }
 
     @Override

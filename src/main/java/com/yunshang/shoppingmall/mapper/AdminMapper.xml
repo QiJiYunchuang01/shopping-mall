@@ -26,11 +26,14 @@
     where admin_id = #{adminId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.yunshang.shoppingmall.entity.Admin">
+
+
     insert into admin_table (admin_id, admin_name, pwd, 
       real_name, limited)
     values (#{adminId,jdbcType=INTEGER}, #{adminName,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
       #{realName,jdbcType=VARCHAR}, #{limited,jdbcType=VARCHAR})
   </insert>
+
   <insert id="insertSelective" parameterType="com.yunshang.shoppingmall.entity.Admin">
     insert into admin_table
     <trim prefix="(" suffix=")" suffixOverrides=",">
