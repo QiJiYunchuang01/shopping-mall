@@ -71,6 +71,7 @@
       </if>
     </trim>
   </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.yunshang.shoppingmall.entity.Admin">
     update admin_table
     <set>
@@ -89,6 +90,7 @@
     </set>
     where admin_id = #{adminId,jdbcType=INTEGER}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="com.yunshang.shoppingmall.entity.Admin">
     update admin_table
     set admin_name = #{adminName,jdbcType=VARCHAR},
@@ -97,4 +99,12 @@
       limited = #{limited,jdbcType=VARCHAR}
     where admin_id = #{adminId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAdminByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from admin_table
+    where admin_name = #{username}
+  </select>
+
 </mapper>

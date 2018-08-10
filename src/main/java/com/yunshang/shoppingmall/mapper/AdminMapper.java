@@ -20,7 +20,14 @@ public interface AdminMapper {
     //
     Admin selectByPrimaryKey(Integer adminId);
 
-    int updateByPrimaryKeySelective(Admin record);
+    //更新管理员
+    int updateByPrimaryKeySelective(Admin admin);
 
     int updateByPrimaryKey(Admin record);
+
+
+    //根据用户名查询
+    Admin selectAdminByUserName(String username);
+
+
 }

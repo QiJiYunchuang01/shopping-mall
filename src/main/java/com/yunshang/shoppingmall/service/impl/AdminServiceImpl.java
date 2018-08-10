@@ -15,10 +15,10 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     AdminMapper adminMapper;
 
-
+//根据adminId删除管理员
     @Override
     public int deleteByPrimaryKey(Integer adminId) {
-        return 0;
+        return adminMapper.deleteByPrimaryKey(adminId);
     }
 
     @Override
@@ -37,13 +37,20 @@ public class AdminServiceImpl implements AdminService {
         return null;
     }
 
+    //更新管理员
     @Override
-    public int updateByPrimaryKeySelective(Admin record) {
-        return 0;
+    public int updateByPrimaryKeySelective(Admin admin) {
+
+        return adminMapper.updateByPrimaryKeySelective(admin);
     }
 
     @Override
     public int updateByPrimaryKey(Admin record) {
         return 0;
+    }
+
+    @Override
+    public Admin selectAdminByUserName(String username) {
+        return adminMapper.selectAdminByUserName(username);
     }
 }

@@ -7,6 +7,7 @@ import com.yunshang.shoppingmall.entity.Admin;
  */
 public interface AdminService {
 
+    //根据adminId删除管理员
     int deleteByPrimaryKey(Integer adminId);
 
     int insert(Admin record);
@@ -16,7 +17,11 @@ public interface AdminService {
 
     Admin selectByPrimaryKey(Integer adminId);
 
-    int updateByPrimaryKeySelective(Admin record);
+    int updateByPrimaryKeySelective(Admin admin);
 
     int updateByPrimaryKey(Admin record);
+
+    //根据用户名查询
+    Admin selectAdminByUserName(String username);
+
 }
